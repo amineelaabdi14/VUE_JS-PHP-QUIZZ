@@ -1,47 +1,41 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
+import Answers from './components/Answers.vue'
+import Question from './components/Question.vue'
+import ProgressBar from './components/ProgressBar.vue'
+import Stepper from './components/Stepper.vue'
+export default {
+  name :'App',
+  components : {
+    Answers,
+    Question,
+    ProgressBar,
+    Stepper
+  }
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div id="page-content">
+    <Stepper />
+    <ProgressBar />
+    <Question />
+    <Answers />
+  </div>
+  
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<style>
+#page-content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #404258;
+  padding: 0 ;
+  margin :0;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+#app  {
+  padding: 0!important;
+  margin:0!important;
 }
 </style>
