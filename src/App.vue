@@ -1,6 +1,7 @@
 <script>
-import Quizz from './components/Quizz.vue'
-import Infos from './components/Infos.vue'
+import Quizz from './views/QuizzView.vue'
+import Infos from './views/InfosView.vue'
+import Stepper from './components/Stepper.vue'
 export default {
   name :'App',
   components : {
@@ -11,8 +12,8 @@ export default {
 </script>
 
 <template>
-
-  <Infos />
+  <Stepper />
+  <router-view />
 </template>
 
 <style scoped>

@@ -7,7 +7,7 @@
             <p>
                 PHP is an open-source server-side scripting language that many devs use for web development. It is also a general-purpose language that you can use to make lots of projects, including Graphical User Interfaces (GUIs).
             </p>
-            <button @click="StartQuizz" id="take-test">Take Test</button>
+            <router-link to="/quizz" id="take-test">Take Test</router-link>
         </div>
     </section>
 </template>
@@ -20,7 +20,7 @@ export default {
         }
     },
     methods:{
-        StartQuizz
+        
     }
 }
 </script>

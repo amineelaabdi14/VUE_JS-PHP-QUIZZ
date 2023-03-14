@@ -1,8 +1,8 @@
 <script>
-import Answers from './Answers.vue'
-import Question from './Question.vue'
-import ProgressBar from './ProgressBar.vue'
-import Stepper from './Stepper.vue'
+import Answers from '../components/Answers.vue'
+import Question from '../components/Question.vue'
+import ProgressBar from '../components/ProgressBar.vue'
+import Stepper from '../components/Stepper.vue'
 export default {
   name :'App',
   components : {
