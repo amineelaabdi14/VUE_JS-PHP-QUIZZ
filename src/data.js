@@ -1,4 +1,4 @@
-let questions=[
+export let questions=[
     {
         "question": "Que signifie PHP?",
         "choice1": "Personal Home Page Hypertext Preprocessor", 

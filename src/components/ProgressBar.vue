@@ -59,7 +59,7 @@
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
   height: 25px;
-  width: 30%;
+  width: 0%;
   background-color: #1B2430;
   transition: width 2s;
 }
