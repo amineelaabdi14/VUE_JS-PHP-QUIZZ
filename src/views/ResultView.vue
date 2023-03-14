@@ -8,17 +8,17 @@
 
         <div id="correct-answers">
             <p>Correct answer</p>
-            <span></span>
+            <span>{{ this.$route.query.correct }}</span>
         </div>
 
         <div id="false-answers">
             <p>False answer</p>
-            <span></span>
+            <span>{{ this.$route.query.false }}</span>
         </div>
 
         <div id="avg-time">
             <p>Avg response time</p>
-            <span></span>
+            <span>{{ this.$route.query.time }}</span>
         </div>
         </div>
     </div>

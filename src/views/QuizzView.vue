@@ -15,7 +15,7 @@ export default {
       myTimer :0,
       responseTime : [],
       falseAnswers :0,
-      correctAnswer :0
+      correctAnswers :0
     }
   },
   name :'App',
@@ -28,7 +28,6 @@ export default {
 
   methods :{
       showQuestions(){
-      this.shuffle();
       if(this.currentQuestion!=questions.length)
       {   
           this.question = questions[this.currentQuestion];
@@ -41,7 +40,20 @@ export default {
           this.startTimer();
       }
       else{
-          this.$router.push('/result');
+          let avgTime=0, total=0;
+          for(let i of this.responseTime)
+          {
+              total+=Number(i);
+          }
+          avgTime=total/this.responseTime.length;
+          this.$router.push({
+            path : '/result',
+            query: {
+              correct : this.correctAnswers,
+              false : this.falseAnswers,
+              time : avgTime
+            }
+          });
       }
       },
       shuffle(){
@@ -65,11 +77,36 @@ export default {
             this.timer=10;
             this.showQuestions();
         }
+      },
+      handleChildEvent(response){
+        this.responseTime.push(10-document.getElementById('myTimer').innerText);
+        document.getElementById('inner-progress-bar').style.width=( this.currentQuestion*100 / questions.length)+'%';
+        if(Number(questions[this.currentQuestion-1].answer)==Number(response))
+        {   
+            this.correctAnswers++;
+            this.timer=10;
+            clearTimeout(this.myTimer);
+            this.showQuestions();
+            // console.log(this.correctAnswers);
+            // console.log(this.falseAnswers);
+        }
+        else {
+            this.falseAnswers++;
+            this.timer=10;
+            clearTimeout(this.myTimer);
+            this.showQuestions();
+            // console.log(this.correctAnswers);
+            // console.log(this.falseAnswers);
+        }
+      },
+      startQuizz(){
+        this.shuffle();
+        this.showQuestions();
       }
   },
   mounted() 
   {
-    this.showQuestions();
+    this.startQuizz();
 
   }
 
@@ -81,7 +118,7 @@ export default {
     <Stepper :active="2" />
     <ProgressBar />
     <Question />
-    <Answers />
+    <Answers @child-event="handleChildEvent" />
   </div>
 </template>
 

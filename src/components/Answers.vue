@@ -2,18 +2,18 @@
     <div id="responses-area">
 
         <div id="first-responses">
-            <div id="res1" class="response">
+            <div id="res1" class="response" @click="sendDataToParent(1)">
                 
             </div>
-            <div id="res2" class="response">
+            <div id="res2" class="response" @click="sendDataToParent(2)">
                 
             </div>
         </div>
         <div id="second-responses">
-            <div id="res3" class="response">
+            <div id="res3" class="response" @click="sendDataToParent(3)">
                 
             </div>
-            <div id="res4" class="response">
+            <div id="res4" class="response" @click="sendDataToParent(4)">
                 
             </div>
         </div>
@@ -21,7 +21,13 @@
 </template>
 
 <script>    
-
+export default {
+  methods : {
+    sendDataToParent(myAnswer) {
+      this.$emit('child-event', myAnswer);
+    }
+  }
+}
 </script>
 
 <style>
