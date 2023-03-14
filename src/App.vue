@@ -1,19 +1,21 @@
 <script>
 import Quizz from './views/QuizzView.vue'
 import Infos from './views/InfosView.vue'
-import Stepper from './components/Stepper.vue'
 export default {
   name :'App',
   components : {
     Quizz,
-    Infos
+    Infos,
   }
 }
 </script>
 
 <template>
-  <Stepper />
-  <router-view />
+  <div id="container">
+  </div>
+    <router-view />
+  
+  
 </template>
 
 <style scoped>

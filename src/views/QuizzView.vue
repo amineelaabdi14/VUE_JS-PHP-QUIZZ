@@ -16,7 +16,7 @@ export default {
 
 <template>
   <div id="page-content">
-    <Stepper />
+    <Stepper :active="2" />
     <ProgressBar />
     <Question />
     <Answers />
@@ -30,9 +30,9 @@ export default {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #404258;
   padding: 0 ;
   margin :0;
+  margin-top: 20px;
 }
 #app  {
   padding: 0!important;

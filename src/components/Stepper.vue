@@ -1,13 +1,15 @@
 <template>
     <div id="stepper-component">
-        <i class="fa-solid fa-house-chimney myIcon "></i>
-        <i class="fa-solid fa-pen myIcon"></i>
-        <i class="fa-solid fa-graduation-cap myIcon"></i>
+        <i class="fa-solid fa-house-chimney myIcon " :class="{'active-icon': active==1} "></i>
+        <i class="fa-solid fa-pen myIcon" :class="{'active-icon': active==2}" ></i>
+        <i class="fa-solid fa-graduation-cap myIcon" :class="{'active-icon': active==3}"></i>
     </div>
 </template>
 
 <script>
-
+export default{
+  props :['active']
+}
 </script>
 
 <style>

@@ -1,5 +1,9 @@
 <template>
     <section id="index-content">
+      <div id="container">
+        <Stepper :active="1" />
+      </div>
+      
         <div id="php-logo-container">
             <img src="../assets/php-logo.png" alt="" id="php-logo">
         </div>
@@ -13,6 +17,7 @@
 </template>
 
 <script>
+import Stepper from "../components/Stepper.vue"
 export default {
     data(){
         return {
@@ -21,11 +26,22 @@ export default {
     },
     methods:{
         
-    }
+    },
+    components :{
+      Stepper,
+    },
+    
 }
 </script>
 
 <style scoped>
+
+div#container {
+  position: fixed;
+  top: 0;
+  margin: auto;
+  width: 100%;
+}
 #take-test {
   background-color: #d4939d;
   border: 0;
@@ -52,7 +68,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  
+  margin-top: 40px;
 }
 @media (max-width: 992px) {
   #index-content {
